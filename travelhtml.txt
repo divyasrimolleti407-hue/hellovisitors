@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel & Explore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">Travel & Explore</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" id="signupBtn">Signup</a></li>
+                <li><a href="#" id="loginBtn">Login</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Explore The World</h1>
+            <p>Discover beautiful destinations around the globe.</p>
+            <a href="#destinations" class="btn">Explore Now</a>
+            
+        </div>
+
+        <!-- Booking Card -->
+        <div class="booking-card" id="booking">
+            <h3>Book Your Trip</h3>
+            <form>
+                <input type="text" placeholder="Location" required>
+                <input type="date" placeholder="Date" required>
+                <input type="number" placeholder="Number of People" required>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Signup Popup Form -->
+    <div class="popup-form" id="signupPopup">
+        <div class="form-container">
+            <span class="close-btn" id="closeSignup">&times;</span>
+            <h2>Signup</h2>
+            <form>
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Popup Form -->
+    <div class="popup-form" id="loginPopup">
+        <div class="form-container">
+            <span class="close-btn" id="closeLogin">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Flight Booking</h3>
+                <p>Book flights to your dream destinations at the best rates.</p>
+            </div>
+            <div class="service-card">
+                <h3>Hotel Reservations</h3>
+                <p>Comfortable and affordable stays for your perfect getaway.</p>
+            </div>
+            <div class="service-card">
+                <h3>Tour Packages</h3>
+                <p>Explore exclusive tour packages that suit your interests.</p>
+            </div>
+            <div class="service-card">
+                <h3>Food & Dining</h3>
+                <p>Experience exquisite local cuisine with our curated dining options.</p>
+            </div>
+            <div class="service-card">
+                <h3>Transportation</h3>
+                <p>Get hassle-free transportation services during your travels.</p>
+            </div>
+            <div class="service-card">
+                <h3>Guided Tours</h3>
+                <p>Join guided tours to explore the best attractions with expert knowledge.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations">
+        <h2>Popular Destinations</h2>
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <div class="destination-card">
+                    <img src="paris.jpeg" alt="Paris">
+                    <h3>Paris</h3>
+                    <div class="destination-info">
+                        <div class="rating">
+                            ★★★★☆ <!-- Star ratings -->
+                        </div>
+                        <div class="cost">
+                            Cost per person: $500
+                        </div>
+                        <a href="#" class="btn book-now">Book Now</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="maldives.jpg" alt="Maldives">
+                    <h3>Maldives</h3>
+                    <div class="destination-info">
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                        <div class="cost">
+                            Cost per person: $1200
+                        </div>
+                        <a href="#" class="btn book-now">Book Now</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="newyork.jpg" alt="New York">
+                    <h3>New York</h3>
+                    <div class="destination-info">
+                        <div class="rating">
+                            ★★★★☆
+                        </div>
+                        <div class="cost">
+                            Cost per person: $700
+                        </div>
+                        <a href="#" class="btn book-now">Book Now</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="london.jpg" alt="London">
+                    <h3>London</h3>
+                    <div class="destination-info">
+                        <div class="rating">
+                            ★★★☆☆
+                        </div>
+                        <div class="cost">
+                            Cost per person: $600
+                        </div>
+                        <a href="#" class="btn book-now">Book Now</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="tokyo1.jpg" alt="Tokyo">
+                    <h3>Tokyo</h3>
+                    <div class="destination-info">
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                        <div class="cost">
+                            Cost per person: $800
+                        </div>
+                        <a href="#" class="btn book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control prev" id="prevBtn">&#10094;</button>
+            <button class="carousel-control next" id="nextBtn">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs">
+        <h2>Travel Blogs</h2>
+        <div class="blogs-container">
+            <div class="blog-card">
+                <img src="blog1.jpeg" alt="Blog 1">
+                <h3>Best Places to Visit in Europe</h3>
+                <p>Discover the hidden gems of Europe that you must visit on your next vacation.</p>
+                <div class="additional-info" id="blog1-info" style="display: none;">
+                    <p>Europe offers a blend of rich history, diverse cultures, and modern attractions. From the Eiffel Tower in Paris to the ancient ruins in Rome, there’s no shortage of breathtaking landmarks.</p>
+                </div>
+                <a href="#" class="btn read-more-btn" data-target="blog1-info">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="blog2.jpg" alt="Blog 2">
+                <h3>Top 5 Beaches to Relax</h3>
+                <p>Relax and rejuvenate on the most serene beaches around the world.</p>
+                <div class="additional-info" id="blog2-info" style="display: none;">
+                    <p>Some of the most peaceful beaches include Maldives’ white sands, Bora Bora’s turquoise waters, and Hawaii’s hidden gems. Ideal for anyone seeking a serene getaway.</p>
+                </div>
+                <a href="#" class="btn read-more-btn" data-target="blog2-info">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="blog3.jpg" alt="Blog 3">
+                <h3>Adventure Trips for Thrill Seekers</h3>
+                <p>Embark on an adventurous journey to explore thrilling destinations.</p>
+                <div class="additional-info" id="blog3-info" style="display: none;">
+                    <p>For thrill seekers, activities like bungee jumping in New Zealand, white-water rafting in Costa Rica, and trekking to Everest Base Camp offer an adrenaline rush like no other.</p>
+                </div>
+                <a href="#" class="btn read-more-btn" data-target="blog3-info">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Acknowledgment Message (Initially hidden) -->
+        <p id="ackMessage" style="display:none; color:rgb(221, 240, 221); margin-top:20px;">
+            Thank you! Your message has been sent successfully.
+        </p>
+    </section>
+
+    <!-- Booking Confirmation Popup -->
+    <div class="popup" id="bookingPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeBookingPopup">&times;</span>
+            <h2>Booking Confirmation</h2>
+            <p>Your booking has been confirmed! Enjoy your trip!</p>
+            <button id="okBtn">OK</button>
+        </div>
+    </div>
+
+    <!-- Thank You Popup -->
+    <div class="popup" id="thankYouPopup">
+        <div class="popup-content">
+            <span class="close-btn" id="closeThankYouPopup">&times;</span>
+            <h2>Thank You!</h2>
+            <p>Your booking has been submitted successfully!</p>
+            <button id="okThankYouBtn">OK</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <h3>Travel & Explore</h3>
+        <p>Explore the world with us. Enjoy special discounts, exclusive packages, and expert-guided tours to make your travel memorable.</p>
+        
+        <!-- Our Destinations Section -->
+        <h4>Our Destinations</h4>
+        <ul class="destinations-list">
+            <li><a href="#destinations">Paris</a></li>
+            <li><a href="#destinations">Maldives</a></li>
+            <li><a href="#destinations">New York</a></li>
+            <li><a href="#destinations">London</a></li>
+            <li><a href="#destinations">Tokyo</a></li>
+        </ul>
+
+        <ul class="socials">
+            <li><a href="#"><img src="facebook.jpeg" alt="Facebook"></a></li>
+            <li><a href="#"><img src="twitter.png" alt="Twitter"></a></li>
+            <li><a href="#"><img src="instagram.png" alt="Instagram"></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Travel & Explore. All Rights Reserved.</p>
+        <p>Designed by Dhanusha</p>
+    </div>
+</footer>
+
+    
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-to-top" id="scrollToTopBtn">&#8679;</a>
+
+    <script src="script.js"></script>
+</body>
+</html>

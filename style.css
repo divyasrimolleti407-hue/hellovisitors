@@ -1,0 +1,780 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* General Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+/* Styling for Links */
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links initially on smaller screens */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Positioning for dropdown */
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+        background-color: #333; /* Background color for dropdown */
+        width: 100%; /* Full width */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .burger {
+        display: flex; /* Show burger menu */
+        cursor: pointer;
+    }
+}
+
+.burger {
+    display: none; /* Hide burger menu by default */
+    flex-direction: column; /* Stack lines vertically */
+}
+
+/* Burger Menu Lines */
+.burger div {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 4px 0;
+}
+
+/* Adjust the visibility of burger menu on smaller screens */
+@media (max-width: 768px) {
+    .burger {
+        display: flex; /* Show burger icon on mobile */
+    }
+}
+
+/* Header Section */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    position: fixed; /* Fix the navigation bar at the top */
+    width: 100%; /* Ensure it spans the full width */
+    top: 0; /* Position it at the very top */
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Add some margin at the top of the content to prevent overlap with the fixed header */
+body {
+    margin-top: 80px; /* Adjust this value based on the height of the header */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative; /* Ensure positioning for pseudo-element */
+    height: 100vh;
+    background: url('building.jpg') no-repeat center center/cover;
+    color: rgb(6, 7, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1; /* To keep content above the overlay */
+}
+
+/* Overlay for dimming the background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: -1; /* Places the overlay behind the content */
+}
+
+.hero-content {
+    position: relative; /* Keep content on top of overlay */
+    z-index: 2; /* Ensure content stays above the overlay */
+}
+
+.hero h1 {
+    font-size: 90px;
+    margin-bottom: 20px;
+    color: white; /* Brighter text to contrast with the dimmed background */
+}
+
+.hero p {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #5da4f0;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Optional: You can add responsive styling for mobile */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 60px;
+    }
+    
+    .hero p {
+        font-size: 24px;
+    }
+    
+    .btn {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+}
+
+
+/* Destinations Section */
+#destinations {
+    padding: 50px;
+    text-align: center;
+}
+
+.destinations-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.destination-card {
+    width: 30%;
+    background: #e7eddc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.destination-card img {
+    width: 100%;
+}
+
+.destination-card h3 {
+    padding: 10px;
+}
+
+
+/* Hover effect for images */
+.destination-card:hover {
+    transform: scale(1.05);
+}
+
+.destination-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(80%);
+}
+
+.destination-card h3 {
+    padding: 10px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.destination-card {
+    min-width: calc(100% / 3); /* Show 3 items at a time */
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel-control.prev {
+    left: 0;
+}
+
+.carousel-control.next {
+    right: 0;
+}
+
+
+
+/* Contact Section */
+#contact {
+    padding: 50px;
+    background: #333;
+    color: white;
+    text-align: center;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contact form input, #contact form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+#contact form button {
+    padding: 10px;
+    background: #f04e31;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .services-container, .destinations-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+/* Services Section */
+#services {
+    padding: 50px;
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.service-card {
+    background:  #56c6e3;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%;
+    cursor: pointer;  /* Make the card appear clickable */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: translateY(-10px);  /* Slightly lift the card */
+    box-shadow: 0px 10px 15px rgba(75, 173, 129, 0.1);  /* Add shadow */
+    background-color: #a1ddec;  /* Lighten the background */
+}
+
+/* Click (active) effect */
+.service-card:active {
+    transform: translateY(0);  /* Bring card back to normal position */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);  /* Slightly smaller shadow */
+    background-color:rgb(232, 177, 195);  /* Darken the background when clicked */
+}
+
+/* Text inside the service card */
+.service-card h3 {
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Change font color for destinations */
+.destinations-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.destinations-list li {
+    margin: 5px 0;
+}
+
+.destinations-list a {
+    color: #fff; /* Set the font color to white */
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+.destinations-list a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+.socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.socials li {
+    margin: 0 10px;
+}
+
+.socials img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: #333;
+    color: white;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #555;
+}
+
+/* Blogs Section */
+#blogs {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#blogs h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.blogs-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.blog-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Ensures content is stacked vertically */
+    justify-content: space-between; /* Space between content and button */
+}
+
+.blog-card img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.blog-card h3, .blog-card p {
+    padding: 15px;
+    color: #333;
+}
+
+.blog-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+.blog-card .btn {
+    display: block;
+    padding: 10px;
+    background-color: #5da4f0;
+    color: white;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    text-decoration: none;
+    margin-top: auto; /* Ensures button is pushed to the bottom */
+}
+
+.blog-card .btn:hover {
+    background-color: #4a8ad4;
+}
+
+/* Popup form styles */
+.popup-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures popup is above all content */
+}
+
+.form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    text-align: center; /* Center-align text and elements */
+}
+
+/* Centering and styling the input fields */
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Styling the buttons */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px; /* Adds space above the button */
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.form-container button:hover {
+    background-color: #2980b9;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Ensures smooth resizing on small screens */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .form-container input, .form-container button {
+        font-size: 14px;
+    }
+}
+
+/* Additional Info Styling */
+.additional-info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Booking Card Styles */
+.booking-card {
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Inner padding */
+    max-width: 300px; /* Maximum width */
+    margin: 20px auto; /* Centering */
+}
+
+.booking-card h3 {
+    margin-bottom: 15px; /* Space below title */
+}
+
+.booking-card input {
+    width: calc(100% - 10px); /* Full width */
+    padding: 10px; /* Padding inside input */
+    margin-bottom: 10px; /* Space between inputs */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners for inputs */
+}
+
+.booking-card button {
+    background-color: #6db1e8; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width */
+}
+
+.booking-card button:hover {
+    background-color:#2196F3; /* Darker green on hover */
+}
+
+/* Button Styles */
+.btn {
+    background-color: #2196F3; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+    margin-right: 10px; /* Space between buttons */
+}
+
+.btn:hover {
+    background-color:#1d80e3; /* Darker green on hover */
+}
+
+.book-now {
+    background-color: #2196F3; /* Blue background */
+}
+
+.book-now:hover {
+    background-color: #1976D2; /* Darker blue on hover */
+}
+
+/* Destination Info Styles */
+.destination-info {
+    margin-top: 10px; /* Space above the info section */
+    text-align: center; /* Center-align the text */
+}
+
+.rating {
+    color: gold; /* Gold color for stars */
+    font-size: 1.2em; /* Size of the stars */
+    margin-bottom: 5px; /* Space below the rating */
+}
+
+.cost {
+    font-size: 1em; /* Font size for cost */
+    margin-bottom: 10px; /* Space below the cost */
+}
+
+.book-now {
+    background-color: #FF5722; /* Orange background for Book Now */
+}
+
+.book-now:hover {
+    background-color: #E64A19; /* Darker orange on hover */
+}
+
+/* Popup Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Width of the popup */
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Popup Styles (for Thank You message) */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.popup-content {
+    background-color: lightblue;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Width of the popup */
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
